@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>沖繩自由行</title>
+
+<style>
+body{
+    font-family: "Microsoft JhengHei", sans-serif;
+    margin:0;
+    background:#f5f7fa;
+}
+
+header{
+    background:#0099cc;
+    color:white;
+    text-align:center;
+    padding:20px;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.day-btns{
+    display:flex;
+    overflow-x:auto;
+    background:white;
+    box-shadow:0 2px 5px rgba(0,0,0,.1);
+}
+
+.day-btn{
+    flex:1;
+    min-width:120px;
+    padding:15px;
+    border:none;
+    background:white;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.day-btn.active{
+    background:#0099cc;
+    color:white;
+}
+
+.day-content{
+    display:none;
+    padding:20px;
+}
+
+.day-content.active{
+    display:block;
+}
+
+.timeline{
+    position:relative;
+    margin-left:20px;
+}
+
+.timeline::before{
+    content:'';
+    position:absolute;
+    left:15px;
+    top:0;
+    bottom:0;
+    width:4px;
+    background:#0099cc;
+}
+
+.item{
+    position:relative;
+    background:white;
+    margin:15px 0 15px 40px;
+    padding:15px;
+    border-radius:10px;
+    box-shadow:0 2px 6px rgba(0,0,0,.1);
+}
+
+.item::before{
+    content:'';
+    position:absolute;
+    left:-33px;
+    top:20px;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:#0099cc;
+}
+
+.time{
+    color:#0099cc;
+    font-weight:bold;
+    font-size:18px;
+}
+
+.location{
+    font-size:18px;
+    margin-top:5px;
+}
+
+.duration{
+    color:#666;
+    margin-top:5px;
+}
+
+.optional{
+    color:#ff6600;
+    font-weight:bold;
+}
+
+@media(max-width:768px){
+    .location{
+        font-size:16px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+🏝️ 沖繩自由行
+</header>
+
+<div class="day-btns">
+    <button class="day-btn active" onclick="showDay(1)">Day1</button>
+    <button class="day-btn" onclick="showDay(2)">Day2</button>
+    <button class="day-btn" onclick="showDay(3)">Day3</button>
+    <button class="day-btn" onclick="showDay(4)">Day4</button>
+    <button class="day-btn" onclick="showDay(5)">Day5</button>
+</div>
+
+<!-- Day1 -->
+<div id="day1" class="day-content active">
+<h2>Day 1｜2026/09/22</h2>
+<div class="timeline">
+
+<div class="item">
+<div class="time">05:00</div>
+<div class="location">萬大路486巷81號</div>
+</div>
+
+<div class="item">
+<div class="time">05:39</div>
+<div class="location">TPE 臺灣桃園國際機場 ✈️ 08:00 起飛</div>
+<div class="duration">停留 02時21分</div>
+</div>
+
+<div class="item">
+<div class="time">10:45</div>
+<div class="location">OKA 那霸機場</div>
+<div class="duration">停留 01時00分</div>
+</div>
+
+<div class="item">
+    <div class="time">12:00</div>
+<div class="location">ハレバレレンタカー租車那覇店</div>
+  <span class="optional">預訂12:00取車</span>
+<div class="duration">停留 00時30分</div>
+</div>
+
+<div class="item">
+<div class="time">13:01</div>
+<div class="location">那霸市第一牧志公設市場</div>
+<div class="duration">停留 01時30分</div>
+</div>
+
+<div class="item">
+<div class="time">14:46</div>
+<div class="location">識名園</div>
+<div class="duration">停留 01時30分</div>
+</div>
+
+<div class="item">
+<div class="time">16:41</div>
+<div class="location">瀨長島</div>
+<div class="duration">停留 02時00分</div>
+</div>
+
+<div class="item">
+<div class="time">19:10</div>
+<div class="location">那霸國際通商店街</div>
+<div class="duration">停留 02時00分</div>
+</div>
+
+<div class="item">
+<div class="time">21:32</div>
+<div class="location">那覇東急REI飯店 🏨</div>
+</div>
+
+</div>
+</div>
+
+<!-- Day2 -->
+<div id="day2" class="day-content">
+<h2>Day 2｜2026/09/23</h2>
+<div class="timeline">
+
+<div class="item">
+<div class="time">08:00</div>
+<div class="location">那覇東急REI飯店</div>
+</div>
+
+<div class="item">
+<div class="time">08:26</div>
+<div class="location">Gangala之谷</div>
+  <span class="optional">預約09:00場次</span>
+<div class="duration">停留 02時00分</div>
+</div>
+
+<div class="item">
+<div class="time">11:05</div>
+<div class="location">玉泉洞 + 午餐</div>
+<div class="duration">停留 04時30分</div>
+</div>
+
+<div class="item">
+<div class="time">16:16</div>
+<div class="location">沖繩戰跡國定公園</div>
+<div class="duration">停留 01時00分</div>
+</div>
+
+<div class="item">
+<div class="time">18:00</div>
+<div class="location">Yasaimakigushiya Gururi Honten</div>
+<div class="duration">停留 01時30分</div>
+</div>
+
+<div class="item">
+<div class="time">19:35</div>
+<div class="location">那霸國際通商店街</div>
+<div class="duration">停留 02時00分</div>
+</div>
+
+<div class="item">
+<div class="time">21:42</div>
+<div class="location">那覇東急REI飯店 🏨</div>
+</div>
+
+</div>
+</div>
+
+<!-- Day3 -->
+<div id="day3" class="day-content">
+<h2>Day 3｜2026/09/24</h2>
+<div class="timeline">
+
+<div class="item">
+<div class="time">07:30</div>
+<div class="location">那覇東急REI飯店</div>
+</div>
+
+<div class="item">
+<div class="time">08:57</div>
+<div class="location">瀨底島玻璃獨木舟</div>
+  <span class="optional">預約09:30場次</span>
+<div class="duration">停留 01時30分</div>
+</div>
+
+<div class="item">
+<div class="time">11:10</div>
+<div class="location">Island Pig House 或 海人料理 海邦丸</div>
+<div class="duration">停留 01時00分</div>
+</div>
+
+<div class="item">
+<div class="time">12:30</div>
+<div class="location">沖繩美麗海水族館</div>
+<div class="duration">停留 04時00分</div>
+</div>
+
+<div class="item">
+<div class="time">17:12</div>
+<div class="location">
+許田休息站
+<span class="optional">（視時間決定）</span>
+</div>
+<div class="duration">停留 00時30分</div>
+</div>
+
+<div class="item">
+<div class="time">18:00</div>
+<div class="location">萬座毛</div>
+<div class="duration">停留 01時00分</div>
+</div>
+
+<div class="item">
+<div class="time">20:11</div>
+<div class="location">AEON Mall Okinawa Rycom 或 壽喜燒</div>
+<div class="duration">停留 02時00分</div>
+</div>
+
+<div class="item">
+<div class="time">21:47</div>
+<div class="location">那覇東急REI飯店 🏨</div>
+</div>
+
+</div>
+</div>
+
+<!-- Day4 -->
+<div id="day4" class="day-content">
+<h2>Day 4｜2026/09/25</h2>
+<div class="timeline">
+
+<div class="item">
+<div class="time">08:30</div>
+<div class="location">那覇東急REI飯店</div>
+</div>
+  
+<div class="item">
+<div class="time">09:07</div>
+<div class="location">永旺 北谷店</div>
+<div class="duration">停留 02時00分</div>
+</div>
+
+<div class="item">
+<div class="time">11:12</div>
+<div class="location">美國村 + 午餐</div>
+<div class="duration">停留 02時00分</div>
+</div>
+
+<div class="item">
+<div class="time">14:00</div>
+<div class="location">首里城</div>
+<div class="duration">停留 04時00分</div>
+</div>
+
+<div class="item">
+<div class="time">18:30</div>
+<div class="location">ハレバレレンタカー租車那覇店</div>
+    <span class="optional">19:00還車</span>
+<div class="duration">停留 00時30分</div>
+</div>
+
+<div class="item">
+<div class="time">19:20</div>
+<div class="location">燒肉 琉球之牛 那霸國際通</div>
+<div class="duration">停留 02時00分</div>
+</div>
+
+<div class="item">
+<div class="time">21:30</div>
+<div class="location">那覇東急REI飯店 🏨</div>
+</div>
+
+</div>
+</div>
+
+<!-- Day5 -->
+<div id="day5" class="day-content">
+<h2>Day 5｜2026/09/26</h2>
+<div class="timeline">
+
+<div class="item">
+<div class="time">07:30</div>
+<div class="location">那覇東急REI飯店</div>
+</div>
+
+<div class="item">
+<div class="time">08:00</div>
+<div class="location">C&C Breakfast</div>
+<div class="duration">停留 02時00分</div>
+</div>
+
+<div class="item">
+<div class="time">10:13</div>
+<div class="location">波上宮</div>
+<div class="duration">停留 01時00分</div>
+</div>
+
+<div class="item">
+<div class="time">11:30</div>
+<div class="location">那覇東急REI飯店</div>
+<div class="duration">停留 00時20分</div>
+</div>
+
+<div class="item">
+<div class="time">12:30</div>
+<div class="location">OKA 那霸機場 ✈️</div>
+  <span class="optional">16:45 起飛</span>
+<div class="duration">停留 04時00分</div>
+</div>
+
+<div class="item">
+<div class="time">17:20</div>
+<div class="location">TPE 臺灣桃園國際機場</div>
+</div>
+
+</div>
+</div>
+
+<script>
+function showDay(day){
+    document.querySelectorAll('.day-content')
+        .forEach(el=>el.classList.remove('active'));
+
+    document.querySelectorAll('.day-btn')
+        .forEach(el=>el.classList.remove('active'));
+
+    document.getElementById('day'+day)
+        .classList.add('active');
+
+    document.querySelectorAll('.day-btn')[day-1]
+        .classList.add('active');
+}
+</script>
+
+</body>
+</html>

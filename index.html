@@ -41,6 +41,8 @@ header{
 .day-btn.active{
     background:#74c0fc;
     color:white;
+    border: none;
+    border-radius: 10px;
 }
 
 .day-content{
@@ -136,6 +138,17 @@ header{
   backdrop-filter: blur(10px);
 }
 
+.map-btn {
+  background: #4dabf7;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin: 6px 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
 @media (max-width: 768px) {
   body {
     background: #f2f4f7;
@@ -170,10 +183,10 @@ header{
 <!-- Day1 -->
 <div id="day1" class="day-content active">
 <h2>Day 1｜2026/09/22(星期二)</h2>
-
+<button class="map-btn" onclick="openDay1Map()">🗺️ Day1 地圖模式</button>
 <div class="summary">
 ✈️ 去程：桃園機場 → 那霸機場<br>
-🚗 租車：12:00 取車（那霸市內）<br>
+🚗 租車：12:00 取車<br>
 🏙️ 市區觀光：牧志市場 / 識名園 / 國際通<br>
 🌅 海景：瀨長島夕陽<br>
 🏨 住宿：那覇東急REI飯店
@@ -280,7 +293,7 @@ header{
 <!-- Day2 -->
 <div id="day2" class="day-content">
 <h2>Day 2｜2026/09/23(星期三)</h2>
-
+<button class="map-btn" onclick="openDay2Map()">🗺️ Day2 地圖模式</button>
 <div class="summary">
 🌿 自然探險：Gangala之谷 / 玉泉洞（鐘乳石洞）<br>
 🪖 歷史景點：沖繩戰跡國定公園<br>
@@ -367,7 +380,7 @@ header{
 <!-- Day3 -->
 <div id="day3" class="day-content">
 <h2>Day 3｜2026/09/24(星期四)</h2>
-
+<button class="map-btn" onclick="openDay3Map()">🗺️ Day3 地圖模式</button>
 <div class="summary">
 🤿 海上活動：瀨底島玻璃獨木舟<br>
 🍴 午餐：島豚料理 / 海邦丸（二選一）<br>
@@ -470,7 +483,7 @@ header{
 <!-- Day4 -->
 <div id="day4" class="day-content">
 <h2>Day 4｜2026/09/25(星期五)</h2>
-
+<button class="map-btn" onclick="openDay4Map()">🗺️ Day4 地圖模式</button>
 <div class="summary">
 🛍️ 購物：永旺北谷 / 美國村<br>
 🏯 文化景點：首里城<br>
@@ -557,7 +570,7 @@ header{
 <!-- Day5 -->
 <div id="day5" class="day-content">
 <h2>Day 5｜2026/09/26(星期六)</h2>
-
+<button class="map-btn" onclick="openDay5Map()">🗺️ Day5 地圖模式</button>
 <div class="summary">
 🍳 早餐：C&C Breakfast<br>
 ⛩️ 文化景點：波上宮<br>
@@ -644,6 +657,76 @@ function showDay(day){
 
     document.querySelectorAll('.day-btn')[day-1]
         .classList.add('active');
+}
+</script>
+
+<script>
+function openDay1Map() {
+    const url = "https://www.google.com/maps/dir/" +
+        "那霸機場/" +
+        "第一牧志公設市場/" +
+        "識名園/" +
+        "瀨長島/" +
+        "那霸國際通商店街/" +
+        "那覇東急REI飯店";
+
+    window.open(url, "_blank");
+}
+</script>
+
+<script>
+function openDay2Map() {
+    const url = "https://www.google.com/maps/dir/" +
+        "那覇東急REI飯店/" +
+        "Gangala之谷/" +
+        "玉泉洞/" +
+        "沖繩戰跡國定公園/" +
+        "Yasaimakigushiya Gururi Honten/" +
+        "那霸國際通商店街/" +
+        "那覇東急REI飯店";
+
+    window.open(url, "_blank");
+}
+</script>
+
+<script>
+function openDay3Map() {
+    const url = "https://www.google.com/maps/dir/" +
+        "那覇東急REI飯店/" +
+        "瀨底島玻璃獨木舟/" +
+        "海人料理 海邦丸/" +
+        "沖繩美麗海水族館/" +
+        "萬座毛/" +
+        "AEON Mall Okinawa Rycom/" +
+        "那覇東急REI飯店";
+
+    window.open(url, "_blank");
+}
+</script>
+
+<script>
+function openDay4Map() {
+    const url = "https://www.google.com/maps/dir/" +
+        "那覇東急REI飯店/" +
+        "永旺 北谷店/" +
+        "美國村/" +
+        "首里城/" +
+        "燒肉 琉球之牛 那霸國際通/" +
+        "那覇東急REI飯店";
+
+    window.open(url, "_blank");
+}
+</script>
+
+<script>
+function openDay5Map() {
+    const url = "https://www.google.com/maps/dir/" +
+        "那覇東急REI飯店/" +
+        "C&C Breakfast/" +
+        "波上宮/" +
+        "那霸機場/"
+
+    window.open(url, "_blank");
 }
 </script>
 

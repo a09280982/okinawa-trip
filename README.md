@@ -1,2 +1,1 @@
 # okinawa-trip
-# okinawa-trip

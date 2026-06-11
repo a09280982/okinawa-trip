@@ -149,6 +149,58 @@ header{
   font-size: 14px;
 }
 
+.booking-list {
+  margin: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.booking-item {
+  background: #fff;
+  padding: 12px 14px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 標籤 */
+.tag {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* 必預訂 */
+.tag.must {
+  background: #ff6b6b;
+  font-size: 18px;
+  color: white;
+}
+
+/* 建議 */
+.tag.suggest {
+  background: #ffa94d;
+  font-size: 18px;
+  color: white;
+}
+
+/* 已預訂 */
+.tag.done {
+  background: #51cf66;
+  font-size: 18px;
+  color: white;
+}
+
+.text {
+  font-size: 18px;
+  color: #333;
+}
+
 @media (max-width: 768px) {
   body {
     background: #f2f4f7;
@@ -173,15 +225,77 @@ header{
 </header>
 
 <div class="day-btns">
-    <button class="day-btn active" onclick="showDay(1)">Day1</button>
-    <button class="day-btn" onclick="showDay(2)">Day2</button>
-    <button class="day-btn" onclick="showDay(3)">Day3</button>
-    <button class="day-btn" onclick="showDay(4)">Day4</button>
-    <button class="day-btn" onclick="showDay(5)">Day5</button>
+    <button class="day-btn active" onclick="showTab('booking')">📌 預訂資訊</button>
+    <button class="day-btn" onclick="showTab('day1')">Day1</button>
+    <button class="day-btn" onclick="showTab('day2')">Day2</button>
+    <button class="day-btn" onclick="showTab('day3')">Day3</button>
+    <button class="day-btn" onclick="showTab('day4')">Day4</button>
+    <button class="day-btn" onclick="showTab('day5')">Day5</button>
+</div>
+
+<!-- booking -->
+<div id="booking" class="day-content active">
+<h2>📌 預訂資訊</h2>
+
+<div class="booking-list">
+
+<div class="booking-item">
+    <span class="tag done">已預訂</span>
+    <span class="text">那覇東急REI飯店 (9/22 15:00入住 ~ 9/26 10:00退房)
+    </span>
+</div>
+
+<div class="booking-item">
+    <span class="tag done">已預訂</span>
+    <span class="text">租車 (9/22 12:00取車～9/25 19:00還車)
+    </span>
+</div>
+
+<div class="booking-item">
+    <span class="tag must">必預訂</span>
+    <span class="text">瀨底島玻璃獨木舟 (9/24 09:30)</span>
+</div>
+
+<div class="booking-item">
+    <span class="tag must">必預訂</span>
+    <span class="text">Gangala之谷 (9/23 10:00)</span>
+</div>
+
+<div class="booking-item">
+    <span class="tag suggest">建議訂</span>
+    <span class="text">沖繩美麗海水族館門票 (9/24)</span>
+</div>
+
+<div class="booking-item">
+    <span class="tag suggest">建議訂</span>
+    <span class="text">萬座毛門票 (9/24)</span>
+</div>
+
+<div class="booking-item">
+    <span class="tag suggest">建議訂</span>
+    <span class="text">玉泉洞門票 (9/23)</span>
+</div>
+
+<div class="booking-item">
+    <span class="tag suggest">建議訂</span>
+    <span class="text">燒肉 琉球之牛 (9/25 晚餐)</span>
+</div>
+
+<div class="booking-item">
+    <span class="tag suggest">建議訂</span>
+    <span class="text">Yasaimakigushiya Gururi 居酒屋 (9/23 晚餐)</span>
+</div>
+
+<div class="booking-item">
+    <span class="tag suggest">建議訂</span>
+    <span class="text">C&C Breakfast (9/26 早餐)</span>
+</div>
+
+</div>
 </div>
 
 <!-- Day1 -->
-<div id="day1" class="day-content active">
+<div id="day1" class="day-content">
 <h2>Day 1｜2026/09/22(星期二)</h2>
 <button class="map-btn" onclick="openDay1Map()">🗺️ Day1 地圖模式</button>
 <div class="summary">
@@ -195,6 +309,7 @@ header{
 <div class="timeline">
 
 <div class="item">
+    <img src="images/下載.jpg">
 <div class="time">05:00</div>
 <div class="location">
     <a href="https://maps.google.com/?q=萬大路486巷81號" target="_blank">
@@ -657,6 +772,26 @@ function showDay(day){
 
     document.querySelectorAll('.day-btn')[day-1]
         .classList.add('active');
+}
+</script>
+
+<script>
+function showTab(tabId) {
+
+    // 隱藏全部
+    document.querySelectorAll('.day-content').forEach(el => {
+        el.style.display = 'none';
+    });
+
+    // 顯示指定
+    document.getElementById(tabId).style.display = 'block';
+
+    // active 按鈕更新
+    document.querySelectorAll('.day-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+
+    event.target.classList.add('active');
 }
 </script>
 

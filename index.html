@@ -212,6 +212,31 @@ header{
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
+.checklist-card {
+    background: white;
+    padding: 16px;
+    margin: 12px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+
+.checklist-card h3 {
+    margin-top: 18px;
+    color: #0099cc;
+    font-size: 26px;
+}
+
+.checklist-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.checklist-card li {
+    padding: 6px 0;
+    line-height: 1.8;
+    font-size: 24px;
+}
+
 @media (max-width: 768px) {
   body {
     background: #f2f4f7;
@@ -247,6 +272,7 @@ header{
 
 <div class="day-btns">
     <button class="day-btn active" onclick="showTab('booking')">📌 預訂資訊</button>
+    <button class="day-btn" onclick="showTab('checklist')">🎒 必帶清單</button>
     <button class="day-btn" onclick="showTab('day1')">Day1</button>
     <button class="day-btn" onclick="showTab('day2')">Day2</button>
     <button class="day-btn" onclick="showTab('day3')">Day3</button>
@@ -261,6 +287,18 @@ header{
 <div class="booking-list">
 
 <div class="booking-item">
+    <span class="tag done">已購買</span>
+    <span class="text">台灣 - 那霸機票 (9/22 8:00起飛)
+    </span>
+</div>
+
+<div class="booking-item">
+    <span class="tag done">已購買</span>
+    <span class="text">那霸 - 台灣機票 (9/26 16:45起飛)
+    </span>
+</div>
+
+<div class="booking-item">
     <span class="tag done">已預訂</span>
     <span class="text">那覇東急REI飯店 (9/22 15:00入住 ~ 9/26 10:00退房)
     </span>
@@ -273,13 +311,23 @@ header{
 </div>
 
 <div class="booking-item">
-    <span class="tag must">必預訂</span>
-    <span class="text">瀨底島玻璃獨木舟 (9/24 09:30)</span>
+    <span class="tag done">已購買</span>
+    <span class="text">Gangala之谷 (9/23 10:00)</span>
 </div>
 
 <div class="booking-item">
-    <span class="tag must">必預訂</span>
-    <span class="text">Gangala之谷 (9/23 10:00)</span>
+    <span class="tag suggest">建議訂</span>
+    <span class="text">玉泉洞門票 (9/23)</span>
+</div>
+
+<div class="booking-item">
+    <span class="tag suggest">建議訂</span>
+    <span class="text">Yasaimakigushiya Gururi 居酒屋 (9/23 晚餐)</span>
+</div>
+
+<div class="booking-item">
+    <span class="tag done">已購買</span>
+    <span class="text">瀨底島玻璃獨木舟 (9/24 09:30)</span>
 </div>
 
 <div class="booking-item">
@@ -294,17 +342,7 @@ header{
 
 <div class="booking-item">
     <span class="tag suggest">建議訂</span>
-    <span class="text">玉泉洞門票 (9/23)</span>
-</div>
-
-<div class="booking-item">
-    <span class="tag suggest">建議訂</span>
     <span class="text">燒肉 琉球之牛 (9/25 晚餐)</span>
-</div>
-
-<div class="booking-item">
-    <span class="tag suggest">建議訂</span>
-    <span class="text">Yasaimakigushiya Gururi 居酒屋 (9/23 晚餐)</span>
 </div>
 
 <div class="booking-item">
@@ -312,7 +350,57 @@ header{
     <span class="text">C&C Breakfast (9/26 早餐)</span>
 </div>
 
+<div class="booking-item">
+    <span class="tag must">必須買</span>
+    <span class="text">旅平險</span>
 </div>
+
+<div class="booking-item">
+    <span class="tag must">必須買</span>
+    <span class="text">eSIM</span>
+</div>
+
+</div>
+</div>
+
+<!-- checklist -->
+<div id="checklist" class="day-content">
+
+<h2>🎒 必帶清單</h2>
+
+<div class="checklist-card">
+
+<h3>📄 證件</h3>
+<ul>
+    <li>☐ 護照</li>
+    <li>☐ 身分證</li>
+    <li>☐ 台灣駕照</li>
+    <li>☐ 日文譯本</li>
+</ul>
+
+<h3>💳 金融</h3>
+<ul>
+    <li>☐ 信用卡</li>
+    <li>☐ 日幣現金</li>
+    <li>☐ 台幣</li>
+</ul>
+
+<h3>📱 3C</h3>
+<ul>
+    <li>☐ 手機</li>
+    <li>☐ 行動電源</li>
+    <li>☐ 充電線</li>
+</ul>
+
+<h3>👕 衣物</h3>
+<ul>
+    <li>☐ 換洗衣物</li>
+    <li>☐ 外套</li>
+    <li>☐ 帽子</li>
+</ul>
+
+</div>
+
 </div>
 
 <!-- Day1 -->
@@ -456,7 +544,7 @@ header{
 <div class="timeline">
 
 <div class="item">
-<div class="time">08:00</div>
+<div class="time">09:00</div>
 <div class="location">
     <a href="https://maps.google.com/?q=那覇東急REI飯店" target="_blank">
         那覇東急REI飯店 🏨
@@ -465,14 +553,14 @@ header{
 </div>
 
 <div class="item">
-<div class="time">08:26</div>
+<div class="time">09:26</div>
 <div class="location">
     <a href="https://maps.google.com/?q=Gangala之谷" target="_blank">
         Gangala之谷
     </a>
 </div>
     <span class="optional">
-    預約09:00場次<br>
+    預約10:00場次<br>
     <a href="https://bobbytravel.tw/gangala/" target="_blank">
         波比看世界介紹
     </a>
@@ -482,7 +570,7 @@ header{
 </div>
 
 <div class="item">
-<div class="time">11:05</div>
+<div class="time">12:05</div>
 <div class="location">
     <a href="https://maps.google.com/?q=玉泉洞" target="_blank">
         玉泉洞
@@ -494,7 +582,7 @@ header{
             波比看世界介紹
         </a>
     </span>
-<div class="duration">停留 04時30分</div>
+<div class="duration">停留 03時30分</div>
 <img class="spot-img" src="images/玉泉洞.jpeg">
 </div>
 
